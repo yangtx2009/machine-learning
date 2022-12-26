@@ -1,0 +1,1 @@
+# [Heterogeneous graph neural network (HetGNN, KDD 2919)](https://drive.google.com/file/d/1Ko5PWNwq6vu9W2DnIosQ6FsFaiAdkgMk/view?usp=drivesdk)

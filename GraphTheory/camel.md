@@ -1,0 +1,1 @@
+# [Camel: Content-Aware and Meta-path Augmented Metric Learning for Author Identification (WWW 2018)](https://drive.google.com/file/d/1CgraBOXUyiFeCe4HCvEV8900Om208n5b/view?usp=drivesdk)

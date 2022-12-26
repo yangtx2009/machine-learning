@@ -1,0 +1,1 @@
+# [metapath2vec: Scalable representation learning for heterogeneous networks (KDD 2017)](https://drive.google.com/file/d/1EDcEqhjq5FdJ-a7YbIE7x0BZyq64u7Ls/view?usp=drivesdk)

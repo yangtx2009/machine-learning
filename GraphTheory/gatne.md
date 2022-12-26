@@ -1,0 +1,1 @@
+# [Representation learning for attributed multiplex heterogeneous network (GATNE, KDD 2019)](https://drive.google.com/file/d/1K5YZ5hvlOb44BGQloh_SdmBVMsqfd6Kw/view?usp=drivesdk)

@@ -1,0 +1,1 @@
+# [Metagraph2vec: complex semantic path augmented heterogeneous network embedding (PAKDD 2018)](https://drive.google.com/file/d/1SFWVe_g4YE5vmEqOu2Q5T1pQhVuM-2w9/view?usp=drivesdk)

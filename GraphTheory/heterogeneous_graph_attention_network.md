@@ -1,0 +1,1 @@
+# [Heterogeneous graph attention network (WWW 2019)](https://drive.google.com/file/d/1VvFHnpaY4Aocw8qw-4Df7YY91cIxGExI/view?usp=drivesdk)

@@ -1,0 +1,1 @@
+# [Cross-Modality Attention with Semantic Graph Embedding for Multi-Label Classification (AAAI 2020)](https://drive.google.com/file/d/188XwuC8nkQdNcVeMHDVGA3CU6NpIjAsh/view?usp=drivesdk)

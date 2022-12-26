@@ -1,0 +1,181 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+# Optical Character Recognition
+
+## Text Detection
+CTPN
+
+## Text Recognition
+大多使用Yolo+CTC或DenseNet+CTC的架构，单行识别速度在0.02s左右
+
+## Projects
+- Summary
+  - https://github.com/hwalsuklee/awesome-deep-text-detection-recognition
+  - https://github.com/topics/text-detection-recognition
+  - https://zhuanlan.zhihu.com/p/100940108
+  - [Text Recognition in the Wild: A Survey (ACM Computing Surveys 2021)](https://drive.google.com/file/d/163kH7okKzlZr_nYcxeT9BYI_xWhmGb93/view?usp=drivesdk)
+  - [文字识别方法整理](https://zhuanlan.zhihu.com/p/65707543)
+  - [HCIILAB/Scene-Text-Recognition (华南理工大学)](https://github.com/HCIILAB/Scene-Text-Recognition) <i class="fa fa-github"></i>
+  - [HCIILAB/Scene-Text-End2end (华南理工大学)](https://github.com/HCIILAB/Scene-Text-End2end) <i class="fa fa-github"></i>
+- Implementation
+  - https://github.com/YCG09/chinese_ocr
+    - CTPN + DenseNet + CTC (Tensorflow+Keras)
+  - https://github.com/eragonruan/text-detection-ctpn
+    - CTPN (Tensorflow)
+  - https://github.com/HusseinYoussef/Arabic-OCR
+    - Arabic OCR
+  - [awesome-deep-text-detection-recognition](https://github.com/hwalsuklee/awesome-deep-text-detection-recognition)
+  - Servies
+    - <img height=250 src="images/ocr-service.png">
+
+## [Dataset](https://github.com/HCIILAB/Scene-Text-Recognition)
+- **Multi-lingual**
+  - [MLT (Multi-Lingual Text) 2017](https://rrc.cvc.uab.es/?ch=8)
+    - Chinese, Japanese, Korean, English, French, Arabic, Italian, German and Indian
+  - [MLT (Multi-Lingual Text) 2019](https://rrc.cvc.uab.es/?ch=15)
+    - Chinese, Japanese, Korean, English, French, Arabic, Italian, German, Bangla and Hindi (Devanagari)
+    - 街景图片
+    - 含有斜向和不同类型字体
+    - [introduction](https://cbdar2019.univ-lr.fr/wp-content/uploads/2019/11/CBDAR2019_RRC-MLT-2019_CBDAR.pdf)
+- **Chinese**
+  - [caffe_ocr](https://github.com/senlinuc/caffe_ocr)
+    - 大部分中文，少部分英语
+    - 只能做Text Recognition
+    - 图片分辨率统一为280x32
+    - 只含灰度打印字体，无旋转
+    - **Sentence level**，无**Character level**
+  - [Chinese Text in the Wild(CTW)](https://ctwdataset.github.io/)
+    - 只含有中文字
+    - 街景，行车记录照片
+    - **Character level**，无**Sentence level**
+  - [SCUT-CTW1500](https://github.com/Yuliang-Liu/Curve-Text-Detector)
+    - 部分中文，部分英语
+    - 含有斜向，弧形字体
+    - https://paperswithcode.com/dataset/scut-ctw1500
+    - **Word level** (类似于Total-Text)
+    - 每个文字边界都由14个点，上下边缘各7个点
+    - 保存格式为 
+    ```
+    xmin，ymin，xmax，ymax（外接矩形），pw1，ph1，...，p14，ph14
+    ```
+  - [ICPR MWI 2018 挑战赛](https://tianchi.aliyun.com/competition/entrance/231651/information?from=oldUrl)
+    - 大部分中文，少部分英语
+    - 含有斜向字体
+    - e-commerce, social networking, and search
+    - **Word level**/**Sentence level**
+  - [LSVT-ICDAR2019 (Large-scale Street View Text with Partial Labeling)](https://ai.baidu.com/broad/introduction?dataset=lsvt)
+    - 大部分中文，少部分英语
+    - 街景照片
+    - 含有斜向字体
+    - **Character level** + **Sentence level**
+  - [MSRA-TD500]
+  - [MTWI](https://pan.baidu.com/share/init?surl=SUODaOzV7YOPkrun0xSz6A#list/path=%2F)
+    - 大部分中文，少部分英语
+    - 淘宝广告图片
+    - 含有斜向字体
+    - password: gox9
+    - **Word level**
+  - [Reading Chinese Text (ReCTS)](https://rrc.cvc.uab.es/?ch=12)
+    - 大部分中文，少部分英语
+    - 街景广告牌照片
+    - 含有斜向和多种字体
+    - **Word level**
+  - [Reading Chinese Text in the Wild(RCTW-17)](http://mclab.eic.hust.edu.cn/icdar2017chinese/dataset.html)
+  - [Total-Text](https://github.com/cs-chan/Total-Text-Dataset)
+    - 大部分英语，少部分中文
+    - 含有斜向，弧形字体
+    - 街景，行车记录照片
+    - **Word level**
+    
+- **English**
+  - [Curved Text (CUTE80)](http://cs-chan.com/downloads_cute80_dataset.html)
+    - 高分辨率照片
+    - 街景+Tshirt图片
+    - 含有斜向，变形，**弧形**和不同类型字体
+  - [IIIT5K](https://cvit.iiit.ac.in/projects/SceneTextUnderstanding/IIIT5K.html)
+    - 只含英语
+    - 含背景
+    - 只能做Text Recognition
+  - [ICDAR 2003](http://www.iapr-tc11.org/mediawiki/index.php?title=ICDAR_2003_Robust_Reading_Competitions)
+    - 只含英语
+    - 街景图片
+    - 含有斜向和不同类型字体
+  - [ICDAR 2013](http://dagdata.cvc.uab.es/icdar2013competition/?ch=2&com=downloads)
+    - 只含英语
+    - 街景图片
+    - 不同类型字体，轻微斜向
+  - [ICDAR 2015](https://rrc.cvc.uab.es/?ch=4)
+    - 只含英语
+    - 街景图片
+    - 含有斜向和不同类型字体
+  - [MSCOCO-Text](https://bgshih.github.io/cocotext/#h2-explorer)
+    - machine-printed vs. handwritten, legible vs. illgible, and English vs. non-English
+    - 街景图片
+    - 含有斜向和不同类型字体
+    - **Word level**
+  - [Street View House Numbers (SVHN)](http://ufldl.stanford.edu/housenumbers/)
+    - 只含数字
+    - 街景图片
+    - 不同类型字体，轻微斜向
+    - **Character level**
+  - [Synthetic Word Dataset](https://www.robots.ox.ac.uk/~vgg/data/text/)
+    - 只含英语
+    - 合成文字，不含背景
+    - 只能做Text Recognition
+  - [Synthetic Data for Text Localisation](http://www.robots.ox.ac.uk/~vgg/data/scenetext/)
+    - 只含英语
+    - 各种图片+合成文字
+    - 含有斜向，**弧形**和不同类型字体
+  - [Street View Text (SVT)](http://tc11.cvc.uab.es/datasets/SVT_1)
+    - 只含英语
+    - Google Street View街景图片
+    - 含有斜向和不同类型字体
+  - [Street View Text-Perspective (SVT-P)](https://pan.baidu.com/share/init?surl=rhYUn1mIo8OZQEGUZ9Nmrg)
+    - Google Street View街景图片
+    - 含有斜向，变形和不同类型字体
+    - password: vnis
+  - [USTB-SV1K]()
+  
+  
+
+- **Deutsch**
+  - 
+- **French**
+  - [Google FSNS(谷歌街景文本数据集)](https://rrc.cvc.uab.es/?ch=6)
+      - 法国街景图片
+- [**Arabic**](https://drive.google.com/file/d/1cpEQMoV5pI-3obkRUDdNF_C2bU0GpK6d/view?usp=drivesdk)
+  - [APTI (Arabic Printed Text Image Database)](https://diuf.unifr.ch/main/diva/APTI/index.html)
+    - 打印字体，方向不变换，不含背景
+    - 只包含阿拉伯字母
+    - **Word level**
+  - [**AcTiv**](http://tc11.cvc.uab.es/datasets/AcTiV_1)
+    - 新闻图片
+    - 打印字体，方向不变换，含背景
+    - **Sentence level**，无**Character level**
+    - https://ieeexplore.ieee.org/document/7333911
+  - [ARASTI (Arabic Scene Text Image)](https://ieee-dataport.org/open-access/arasti-database)
+    - 字母图片，类似于SVHN
+    - 打印字体，方向不变换，含背景
+    - **Character level**
+  - [KAFD (King Fahd Univeristy Arabic Font Database)](http://kafd.ideas2serve.net/)
+    - 文档图片
+    - 手写字体，方向不变换，不含背景
+    - **Sentence level**
+  - [HACDB (Handwritten Arabic Characters Database for Automatic Character Recognition)](http://repository.uob.edu.ly/handle/123456789/544)
+    - 字母图片，类似于MNIST
+    - 手写字体，方向不变换，不含背景
+    - **Character level**
+  - [IFN/ENIT](http://www.ifnenit.com/)
+    - 手写字体，方向不变换，不含背景
+    - 只能做Text Recognition
+    - **Word level**
+  - [SmartATID](https://sites.google.com/site/smartatid/)
+    - 文档图片
+    - 手写字体，方向有倾斜，模糊失焦，不含背景
+    - **Sentence level**
+  
+- **Japanese**
+  - [ICDAR 2017](https://rrc.cvc.uab.es/?ch=7&com=introduction)
+    - 大部分日语，少部分英语
+    - 大阪市街景照片
+    - 含有斜向，弧形和不同类型字体

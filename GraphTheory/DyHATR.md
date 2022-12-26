@@ -1,0 +1,1 @@
+# [Modeling Dynamic Heterogeneous Network for Link Prediction using Hierarchical Attention with Temporal RNN (DyHATR, ECML PKDD 2020)](https://drive.google.com/file/d/1_jO5ug4t_2eF9yn81mN6EDGRd-VEQIH6/view?usp=drivesdk)

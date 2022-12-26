@@ -1,0 +1,1 @@
+# [Heterogeneous information network embedding for recommendation (HERec, IEEE Transactions on Knowledge and Data Engineering 2019)](https://drive.google.com/file/d/1d-XJkAvyUtYaTNNF5DSg9BhmjUbbQJuh/view?usp=drivesdk)
