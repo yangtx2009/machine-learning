@@ -283,10 +283,6 @@
   - [ImVoxelNet (WACV 2022)](PointCloud/imvoxelnet.md)
 
 ---
-## Autonomous Navigation
-
-
----
 ## [Recommendation](Recommendation/recommendation.md)
 - [LIRA 1998](Recommendation/lira.md)
 - [SimRank 2002](https://drive.google.com/file/d/16bSJlpzmGmxAgh-U_zMyl1QJvqhcY_vO/view?usp=drivesdk)

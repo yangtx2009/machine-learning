@@ -18,8 +18,15 @@ personalization (for users' taste)
 
 ## Dataset
 - [Movie Lens Dataset](http://grouplens.org/datasets/movielens/)
-
-
+- [KuaiRec 快手视频分享日志数据](https://kuairec.com/)
+- [Tenrec 腾讯视频推荐与图文推荐数据](https://static.qblv.qq.com/qblv/h5/algo-frontend/tenrec_dataset.html)
+- [阿里巴巴用户行为数据集](https://tianchi.aliyun.com/dataset/dataDetail?dataId=81505)
+- [Jester 笑话评分系统](https://eigentaste.berkeley.edu/dataset/)
+- [Book-Crossings 图书评分数据集](http://www2.informatik.uni-freiburg.de/~cziegler/BX/)
+- [netflix 电影评分数据集](https://www.kaggle.com/netflix-inc/netflix-prize-data)
+- [Last.FM 音乐评价数据集, 包含社交关联](https://grouplens.org/datasets/hetrec-2011/)
+- [Retailrocket 电商数据集](https://www.kaggle.com/retailrocket/ecommerce-dataset)
+- [FourSquare 地理社交场馆评价信息](https://archive.org/details/201309_foursquare_dataset_umn)
 
 ## 1. Content-based 基于内容的推荐
 
