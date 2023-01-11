@@ -162,6 +162,8 @@
 ## [Natural Language Processing](NaturalLanguageProcessing/nature_language_processing.md)
 - traditional methods
   - [word2vec (‎Google 2013)](NaturalLanguageProcessing/word2vec.md)
+- general
+  - [GPT-3 (NIPS 2020)](NaturalLanguageProcessing/gpt-3.md)
 - full sentence translation
   - seq2seq
   - [A Neural Probabilistic Language Model (JMRL 2003)](NaturalLanguageProcessing/a_neural_probabilistic_language_model.md)
@@ -181,6 +183,12 @@
 - Machine Translation
   - [Continuous space language models (CSL 2007)](https://www.sciencedirect.com/science/article/abs/pii/S0885230806000325)
   - [Statistical Language Models Based on Neural Networks 2012](https://www.fit.vutbr.cz/~imikolov/rnnlm/thesis.pdf)
+
+- Speech Recognition
+  - [Whisper 2022](NaturalLanguageProcessing/whisper.md)
+  - 
+- Dialogue Generation
+  
 
 ---
 ## [Graph Theory](GraphTheory/graph_theory.md) 
