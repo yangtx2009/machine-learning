@@ -6,9 +6,6 @@
   - layer normalization
 - [ResNeSt 2020](https://drive.google.com/file/d/1QlGDm0RTg7SJFegwRIll3Egnvczp-mWo/view?usp=drivesdk) (split-attention)
 
----
-## Action Predition
-
 
 ---
 ## [Computer Vision](ComputerVision/computer_vision.md)
@@ -163,6 +160,7 @@
 - traditional methods
   - [word2vec (‎Google 2013)](NaturalLanguageProcessing/word2vec.md)
 - general
+  - [GPT-2/RWC (2019)](NaturalLanguageProcessing/gpt-2.md)
   - [GPT-3 (NIPS 2020)](NaturalLanguageProcessing/gpt-3.md)
 - full sentence translation
   - seq2seq
@@ -325,3 +323,27 @@
 #### autoregressive networks
 - WaveNets 2016
 - PixelRNN 2016
+
+
+---
+## Transfer Learning
+
+
+---
+## [Domain Adaptation](DomainAdaption\domain_adaption.md) 
+
+---
+## Meta-Learning
+
+---
+## Continual Learning
+
+
+---
+## Data Augmentation
+
+
+---
+## Concepts
+- [data contamination](NaturalLanguageProcessing/gpt-3.md): training dataset can potentially include content from test datasets
+- [sentiment analysis](NaturalLanguageProcessing/gpt-2.md): 情绪分析
