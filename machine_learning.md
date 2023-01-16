@@ -327,7 +327,7 @@
 
 ---
 ## Transfer Learning
-
+- [Audio Spoofing Verification using Deep Convolutional Neural Networks by Transfer Learning (CoRR 2020)]()
 
 ---
 ## [Domain Adaptation](DomainAdaption\domain_adaption.md) 
