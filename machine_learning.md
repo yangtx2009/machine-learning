@@ -6,10 +6,9 @@
   - layer normalization
 - [ResNeSt 2020](https://drive.google.com/file/d/1QlGDm0RTg7SJFegwRIll3Egnvczp-mWo/view?usp=drivesdk) (split-attention)
 
-
 ---
 ## [Computer Vision](ComputerVision/computer_vision.md)
-### **detection**
+### [detection](ComputerVision/Detection/detection.md)
 - R-CNN 2014
   - two-stages: pretrained CNN (one forward pass for each object proposal) + SVM
 - [Fast R-CNN 2015](ComputerVision/Detection/fast-rcnn.md)
@@ -26,8 +25,16 @@
 - RelationNet++ 2020
 - DETR 2020
 - UP-DETR 2020
-- Survey
-  - [Towards Performing Image Classification and Object Detection with Convolutional Neural Networks in Autonomous Driving Systems: A Survey (December 2021)](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9696317)
+
+### [one/few shot object detection](ComputerVision/OneFewShot/one-or-few-shot-object-detection.md)
+- [OS2D (ECCV 2020)]()
+- [One-Shot Object Detection without Fine-Tuning (2020)]()
+- [Quasi-Dense Similarity Learning for Multiple Object Tracking (CVPR 2021)]()
+- [Meta Faster R-CNN (AAAI 2022)]()
+- [Semantic-Aligned Fusion Transformer for One-Shot Object Detection (CVPR 2022)]()
+- [One-Shot General Object Localization (arxiv 2022)]()
+- [Balanced and Hierarchical Relation Learning for One-Shot Object Detection (CVPR 2022)]()
+- [Simple Open-Vocabulary Object Detection with Vision Transformers (ECCV 2022)]()
 
 ### **segmentation**
 - Regional proposal based
@@ -249,7 +256,7 @@
 
 ---
 ## [Outlier Detection](OutlierDetection/outlier_detection.md)
-- One class classification
+- One class classification / Out-of-Distribution
 - Open set/world recognition
   - [Towards Open World Object Detection (CVPR 2021)](OutlierDetection/towards_open_world_object_detAection.md)
   - [OW-DETR (arxiv 2021)](OutlierDetection/ow-detr.md)
