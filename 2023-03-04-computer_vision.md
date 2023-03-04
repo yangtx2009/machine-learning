@@ -1,14 +1,15 @@
 ---
 title: Summary of Computer Vision
-date: 2023-03-04 14:30:00 +/-0100
-categories: [Computer Vision, Machine Learning]
-tags: []     # TAG names should always be lowercase
+date: 2023-03-04 14:30:00 +0100
+categories: [Machine Learning, Computer Vision]
+tags: [summary]     # TAG names should always be lowercase
 ---
 
-## [detection]({{site.machine-learning}}ComputerVision/Detection/detection.md)
+## [detection]({{site.machine-learning}}/ComputerVision/Detection/2023-03-04-detection.md)
+
 - R-CNN 2014
   - two-stages: pretrained CNN (one forward pass for each object proposal) + SVM
-- [Fast R-CNN 2015](ComputerVision/Detection/fast-rcnn.md)
+- [Fast R-CNN 2015](/ComputerVision/Detection/fast-rcnn.md)
   - SPPnet (one forward pass for all proposals) + RoI pooling layer
 - [Faster R-CNN 2015](ComputerVision/Detection/faster-rcnn.md) <span> &#128293;</span>
   - region proposal network (RPN) to replace RoI pooling
