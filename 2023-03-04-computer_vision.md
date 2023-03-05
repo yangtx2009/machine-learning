@@ -1,10 +1,3 @@
-<!-- ---
-title: Summary of Computer Vision
-date: 2023-03-04 14:30:00 +0100
-categories: [Machine Learning, Computer Vision]
-tags: [summary]     # TAG names should always be lowercase
---- -->
-
 ## [detection]({{site.machine-learning}}/ComputerVision/Detection/2023-03-04-detection.md)
 
 - R-CNN 2014
