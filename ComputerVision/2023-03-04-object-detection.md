@@ -2,8 +2,8 @@
 title: Object Detection
 author: yangtx
 date: 2023-03-04 20:13:00 +0100
-categories: [Machine Learning, Computer Vision, Detection]
-tags: []     # TAG names should always be lowercase
+categories: [Machine Learning, Computer Vision]
+tags: [object-detection]     # TAG names should always be lowercase
 math: true
 ---
 
@@ -51,11 +51,13 @@ $$\text{smooth}_{L_1}(x) = \left\{\begin{matrix} 0.5x^{2} & \text{if } |x|<1 \\|
 ## [RetinaNet (ICCV 2017): Focal Loss for Dense Object Detection](https://drive.google.com/file/d/19kEO8wkKiBUzYEEHVTwDVBS3tcNGyNa2/view?usp=sharing)
 - **Focal Loss** (weighted cross-entropy loss)
   - down-weight easy examples and thus focus training on hard negatives.
+
     $$ FL(p_t)=-\alpha(1-p_t)^{\gamma}\log(p_t) $$
 
 - **Feature Pyramid Network Backbone**
+
     ![](/assets/img/papers/images/retinanet.png)
-    - augments a standard convolutional network with a top-down pathway and lateral connections
+    augments a standard convolutional network with a top-down pathway and lateral connections
 
 ---
 
@@ -68,3 +70,17 @@ $$\text{smooth}_{L_1}(x) = \left\{\begin{matrix} 0.5x^{2} & \text{if } |x|<1 \\|
 ---
 
 ## [YOLOv4 (arxiv 2020): Optimal Speed and Accuracy of Object Detection](https://arxiv.org/abs/2004.10934)
+
+```markmap
+# Docs as Code
+
+## Markdown
+
+## Hugo
+* docsy theme
+* reveal-hugo theme
+
+## GitHub Pages
+
+## GitHub Actions
+```

@@ -3,7 +3,7 @@ title: Segmentation
 author: yangtx
 date: 2023-03-04 20:13:00 +0100
 categories: [Machine Learning, Computer Vision]
-tags: []     # TAG names should always be lowercase
+tags: [segmentation]     # TAG names should always be lowercase
 math: true
 ---
 
