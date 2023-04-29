@@ -47,7 +47,7 @@ math: true
 - [Lane detection in driving assistance system 2008](https://onlinelibrary.wiley.com/doi/pdf/10.1002/rob.20255)
 - Spatial relationship modeling
   - Markov Random Fields (MRF)
-    - [MRFNet 2016](mrfnet.md)
+    - MRFNet 2016
   - Conditional Random Fields (CRF)
     - [DenseCRF (NIPS 2011)](https://arxiv.org/abs/1210.5644)
       - https://blog.csdn.net/qq_31347869/article/details/91344524
