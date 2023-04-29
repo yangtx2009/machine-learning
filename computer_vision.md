@@ -90,6 +90,8 @@
   - [GAN 2014](https://arxiv.org/abs/1406.2661)
 - textual descriptions
   - [<span>Neural Image Caption Generation with Visual Attention &#x1F448;</span>](https://arxiv.org/abs/1502.03044)
+- augmentation
+  - Sill-Net (2021)
 
 ## [**ocr**](./ComputerVision/OCR/ocr.md)
 - [Spatial Transformer Networks (NIPS 2015)](ComputerVision/OCR/spatial_transformer_networks.md)
