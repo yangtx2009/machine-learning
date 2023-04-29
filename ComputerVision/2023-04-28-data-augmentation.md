@@ -46,10 +46,6 @@ The framework consists of three modules which are **separately trained**:
   - quantifies the distances between the illumination feature of each same-labeled image $z_{illu}\rvert_{x_ci,y_c}$ and their expectation $\mathbb{E}(z_{illu}\rvert_{x_c,y_c})$
   - 简单地说，假设illum特征在训练集内是随机的，那么意味着特征样本要在分布中尽可能相互远离彼此
 
-
-References:
-- [arxiv](https://arxiv.org/abs/2102.03539)
-
 Datasets:
 - German Traffic Sign Recognition Benchmark (GTSRB)
 - Tsinghua-Tencent 100K (TT100K)
@@ -58,3 +54,7 @@ Datasets:
 - BelgaLogos
 - FlirckrLogos-32
 - TopLogo-10
+
+References:
+- [arxiv](https://arxiv.org/abs/2102.03539)
+
