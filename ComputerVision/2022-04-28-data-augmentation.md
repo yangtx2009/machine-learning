@@ -36,14 +36,14 @@ The framework consists of three modules which are **separately trained**:
 - **matching and reconstruction module**
   - spatial transformer $\mathcal{T}$: learn the parameters of affine transformation on the deformed objects and then rectify their semantic features to the regular positions 使用空间变换器来对特征$z_{sem}$进行变换，使其还原到template的大小和位置
   - two targets
-    - train a transformer $\mathcal{T}$ to minize MSE between $z_{sem}|_{x_i}$ and $z_{sem}|_{t_i}$ in semantic feature space
+    - train a transformer $\mathcal{T}$ to minize MSE between $z_{sem}\rvert_{x_i}$ and $z_{sem}\rvert_{t_i}$ in semantic feature space
     - train the reconstructor to reconstruct the template image from $z_{sem}$
 - **augmentation module**
   - negative Post Interventional Disagreement (PIDA): 
   $$
   L_{illu} = - PIDA = -\sum_{c=1}^M \sum_{i=1}^{N_c} \mathcal{D}(\mathbb{E}(z_{illu}|_{x_c,y_c}), z_{illu}|_{x_ci,y_c})
   $$
-  - quantifies the distances between the illumination feature of each same-labeled image $z_{illu}|_{x_ci,y_c}$ and their expectation $\mathbb{E}(z_{illu}|_{x_c,y_c})$
+  - quantifies the distances between the illumination feature of each same-labeled image $z_{illu}\rvert_{x_ci,y_c}$ and their expectation $\mathbb{E}(z_{illu}\rvert_{x_c,y_c})$
   - 简单地说，假设illum特征在训练集内是随机的，那么意味着特征样本要在分布中尽可能相互远离彼此
 
 
