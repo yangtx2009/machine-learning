@@ -405,7 +405,7 @@ On Recognizing Texts of Arbitrary Shapes with 2D Self-Attention
   - 高达 22.8 fps
   - 支持中英文识别
   - 之前的TextAlign和FOTS，默认文字轮廓是直边四边形，可以被认为是ABCNet的特例
-  - 省去了[2D attention](towards_end-to-end_text_spotting_in_natural_scenes.md) 中的复杂变换
+  - 省去了2D attention 中的复杂变换
   - 对于任意文字排布问题，有两种解决算法：
     - segmentation-based methods：图片分割
     - regression-based methods：预定义文字排布形状，并回归分析形状模型
@@ -427,7 +427,7 @@ On Recognizing Texts of Arbitrary Shapes with 2D Self-Attention
     $$
   - 巴塞尔Ground Truth生成
     - CTW1500上下边各7个点，Total-Text上下边各5个点
-    - 目的是将普通的基于多边形标注（polygonal annotations，m个点 <img src="https://latex.codecogs.com/svg.image?\{(p_{x_i},p_y_i)\}_{i=1}^m" /> ）转换为巴塞尔曲线标注
+    - 目的是将普通的基于多边形标注（polygonal annotations，m个点 $\{(p_{x_i},p_{y_i})\}_{i=1}^m$ ）转换为巴塞尔曲线标注
     - 使用least square method拟合巴塞尔曲线
     $$
     \begin{bmatrix}B_{0,3}(t_0) & \cdots & B_{3,3}(t_0) \\B_{0,3}(t_1) & \vdots  & B_{3,3}(t_1) \\\vdots  & \ddots & \vdots \\B_{0,3}(t_m) & \cdots  & B_{3,3}(t_m) \\\end{bmatrix}\begin{bmatrix}b_{x_0} & b_{y_0} \\b_{x_1} & b_{y_1} \\b_{x_2} & b_{y_2} \\b_{x_3} & b_{y_3} \\\end{bmatrix}=\begin{bmatrix}p_{x_0} & p_{y_0} \\p_{x_1} & p_{y_1} \\\vdots & \vdots \\p_{x_m} & p_{y_m} \\\end{bmatrix}
@@ -452,7 +452,6 @@ On Recognizing Texts of Arbitrary Shapes with 2D Self-Attention
   - [ArXiv](https://arxiv.org/abs/2002.10200)
   - [Github (Adelaidet, PyTorch)](https://github.com/aim-uofa/AdelaiDet)
   - [Github (Chinese)](https://github.com/Yuliang-Liu/ABCNet_Chinese)
-  - [加强版ABCNet v2](./abcnet_v2.md)
 
 ---
 
