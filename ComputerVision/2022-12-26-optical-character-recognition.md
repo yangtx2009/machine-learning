@@ -12,7 +12,7 @@ math: true
 
 The optical character recognition (OCR) can be divided into two levels:
 - **Text Detection**:
-  merely detect the text regiona, such as CTPN.
+  merely detect the text regions, such as CTPN.
 - **Text Recognition**:
   not only detect the regions but also the contents of texts.
   - Two-stage structure:
@@ -193,6 +193,92 @@ The optical character recognition (OCR) can be divided into two levels:
     - 含有斜向，弧形和不同类型字体
 
 ---
+### [CTPN (ECCV 2016)](https://drive.google.com/file/d/1JrW9_dqn3HxK-hm73bWpbxxC0QqCmzVJ/view?usp=drivesdk)
+Detecting Text in Natural Image with Connectionist Text Proposal Network
+
+- CTPN: Connectionist (类神经) Text Proposal Network
+
+
+- References
+  - [ArXiv](https://arxiv.org/pdf/1609.03605.pdf)
+  - [Github (PyTorch)](https://github.com/opconty/pytorch_ctpn)
+  - [Github (Tensorflow/Keras)](https://github.com/eragonruan/text-detection-ctpn)
+
+---
+
+### [CRNN+CTC (TPAMI 2017)](https://drive.google.com/file/d/1Ixcbz_YHN-Jy24C8nTXf7NWGiL9Zwxch/view?usp=drivesdk)
+An End-to-End Trainable Neural Network for Image-based Sequence Recognition and Its Application to Scene Text Recognition
+
+- References
+  - [ArXiv](https://arxiv.org/pdf/1507.05717.pdf)
+  - [Gtihub (Tensorflow)](https://github.com/xusongpei/crnn-ctc)
+  - [一文读懂CRNN+CTC文字识别](https://zhuanlan.zhihu.com/p/43534801)
+  - [中文CRNN识别 Github (PyTorch)](https://github.com/Sierkinhane/crnn_chinese_characters_rec)
+
+---
+
+### [EAST (CVPR 2017)](https://drive.google.com/file/d/1w5FuV2EHVzlkjsxfq-35-_XHhG8MVzbX/view?usp=drivesdk)
+An Efficient and Accurate Scene Text Detector
+
+- References
+  - [Github (Tensorflow)](https://github.com/argman/EAST)
+  - [OpenAccess](https://openaccess.thecvf.com/content_cvpr_2017/papers/Zhou_EAST_An_Efficient_CVPR_2017_paper.pdf)
+
+---
+
+### [FOTS (CVPR 2018)](https://drive.google.com/file/d/1ZZio-dRNO_QnqyDP1T15AWBrGNwCkjI4/view?usp=drivesdk)
+Fast Oriented Text Spotting with a Unified Network
+
+- Overview
+  - 目的是解决两个问题
+    - 两阶算法使得出现多个字符区域时，计算过于缓慢
+    - 忽略了detection和recognition间视觉线索的相关联系 ignores the correlation in visual cues shared in detection and recognition
+  - 同时执行检测和识别，以加快速度
+  - 提出关于了**RoIRotate**算法来将卷积特征分享给 检测 和 识别 两个模块
+  - 第一个实现旋转文字检测与识别的端到端算法，可达 22.6 fps
+
+- Method
+  - share features 共享特征
+    - 输出1/4原图片大小的特征图
+    - 直接被detection和recognition读取，recognition不需要额外学习视觉特征
+  - 文字检测分支
+    - 输出5通道，分别是bbox的上下左右四个边界的位置，以及旋转角
+    - 最后使用NMS，使用一个阈值去掉负样本，NMS的阈值也是根据统计而来的
+    - 目标函数分为两个terms
+      - 像素级分类Cross Entropy损失 (pixel-wise classification loss for a down-sampled score map) $$L_{cls}=\frac{1}{|\Omega|}\sum_{x\in \Omega}H(p_x,p_x^*)$$
+      - 回归损失 
+      $$L_{reg}=\frac{1}{|\Omega|}\sum_{x\in\Omega}IoU(R_x,R_x^*)+\lambda_\theta(1-cos(\theta_x,\theta_x^*))$$
+      - 完整检测函数 
+      $$L_{detect}=L_{cls}+\lambda_{reg}L_{reg}$$
+
+   - RoIRotate
+     - 目的是根据检测到的bbox，对shared feature进行变换
+     - 保持高度和长宽比一致，长度随文字多少变化，使用bilinear interpolation
+     - 第一步：根据bbox计算仿射变换参数
+     - 第二步：对shared feature map进行仿射
+   - 文字识别分支
+     - 训练时，不直接使用检测结果，而是ground truth，类似于teacher forcing
+     - bi-directional LSTM + CTC decoder
+     - 每一列作为一个特征，输入到LSTM中
+     - 目标函数
+       $$L_{recog}=-\frac{1}{N}\sum_{n=1}^N \log p(y_n^*|x)$$
+
+![](/assets/img/papers/fots.png)
+
+- Dataset
+  - ICDAR 2015
+  - ICDAR 2017 MLT
+  - ICDAR 2013
+
+- References
+  - [PaperswithCode](https://paperswithcode.com/paper/fots-fast-oriented-text-spotting-with-a)
+  - [jiangxiluning/FOTS.PyTorch (PyTorch)](https://github.com/jiangxiluning/FOTS.PyTorch)  <i class="fa fa-github"></i>
+  - [Pay20Y/FOTS_TF (TensorFlow)](https://github.com/Pay20Y/FOTS_TF) <i class="fa fa-github"></i>
+  - [ xieyufei1993/FOTS (PyTorch)](https://github.com/xieyufei1993/FOTS) <i class="fa fa-github"></i>
+  - [yu20103983/FOTS (TensorFlow)](https://github.com/yu20103983/FOTS) <i class="fa fa-github"></i>
+  - [Demo Video](https://www.youtube.com/watch?v=F7TTYlFr2QM) <i class="fa fa-youtube-play" style="color:red"></i>
+
+---
 
 ### [ASTER (TPAMI 2018)]()
 An Attentional Scene Text Recognizer with Flexible Rectification
@@ -200,6 +286,111 @@ An Attentional Scene Text Recognizer with Flexible Rectification
 - References
   - [Github (Tensorflow 1.4)](https://github.com/bgshih/aster)
   - [Github (PyTorch)](https://github.com/ayumiymk/aster.pytorch)
+
+---
+
+### [ACE (CVPR 2019)](https://drive.google.com/file/d/1PxBz26fRqRh03tKwVqzRpZwmjDdq8utv/view?usp=drivesdk)
+Aggregation Cross-Entropy for Sequence Recognition
+
+- References
+  - [Github (PyTorch)](https://github.com/summerlvsong/Aggregation-Cross-Entropy)
+
+---
+
+### [ESIR (CVPR 2019)](https://drive.google.com/file/d/1wvEflXIk6DHzSZxf3fpsiUSQXHnc73Or/view?usp=drivesdk)
+End-to-end Scene Text Recognition via Iterative Image Rectification
+
+- References
+  - [ArXiv](https://arxiv.org/abs/1812.05824)
+  - no source code 无代码
+
+---
+
+### [Mask TextSpotter (TPAMI 2019)](https://drive.google.com/file/d/1G25wffK557yk5K417wZHyRG7dTAOi8pW/view?usp=drivesdk)
+An end-to-end trainable neural network for spotting text with arbitrary shapes
+
+- Overview
+  - 使用语义分割来实现准确的文字检测和识别
+  - 生成文字对象的shape mask，之后再检测再2D空间内分割到的文字区域
+  - **缺点**：
+    - 只能处理字母类语言，不适合处理中文
+    - 很难处理标点符号（数量过大）
+    - 需要字符级的标注，成本太高
+![](/assets/img/papers/mask-textspotter.png)
+
+
+- Framework
+  - feature pyramid network (**FPN**) 提取特征
+  - region proposal network (**RPN**) 生成text proposals
+  - **Fast R-CNN** 生成 bounding boxes regression
+  - two mask branches
+    - text instance segmentation 生成文字实例分割：
+      - 1 global text instance map
+    - character segmentation 生成字符分割
+      - 36 character maps：26 letters + 10 Arabic numerals
+      - 1 background character map
+  - 目标变量有：
+    - $P=\{p_1,p_2,...,p_m\}$: polygons which represent the localization of text regions
+    - $C=\{c_1=(cc_1,cl_1),c_2=(cc_2,cl_2),...,c_n=(cc_n,cl_n)\}$：the category and location of a character
+
+- Dataset
+  - SynthText
+  - ICDAR2013
+  - ICDAR2015
+  - Total-Text
+
+- References
+  - [IEEE](https://ieeexplore.ieee.org/document/8812908)
+  - [Github (PyTorch)](https://github.com/MhLiao/MaskTextSpotter)
+
+---
+
+### [E2E TextSpotting (ICCV 2019)](https://drive.google.com/file/d/14WaOOSJKHrv7o_fuc-PusmioYg3PQCVY/view?usp=drivesdk)
+Towards end-to-end text spotting in natural scenes (2D attention)
+
+- References
+  - [CVF](https://openaccess.thecvf.com/content_ICCV_2019/papers/Qin_Towards_Unconstrained_End-to-End_Text_Spotting_ICCV_2019_paper.pdf)
+
+---
+
+### [DAN (ICCV 2019)](https://drive.google.com/file/d/13DHYBSPXPqXiqv2GYidIOnI2dAgf6ss5/view?usp=drivesdk)
+Decoupled Attention Network for Text Recognition
+
+- Overview
+  - 使用历史解码结果 分离匹配操作
+  - 使用CAM代替循环匹配模块（recurrency alignment module）
+
+<center>
+<img src="/assets/img/papers/dan_misalignment.png">
+</center>
+
+- Framework
+  - feature encoder 获取视觉特征 (使用了减采样)
+  - convolutional alignment module (CAM) 将匹配操作从特征编码模块中分离出来
+  - decoupled text decoder 分离后的文字解码器（GRU）
+- Feature encoder的输出大小为 $C*H/r_h*W/r_w$，$C$是输出通道数
+- CAM输出 $\max T*H/r_h*W/r_w$，$\max T$是最大通道数，等于 最后要输出的 最大字符串长度
+
+<center>
+<img height=250 src="/assets/img/papers/dan.png"><br>
+<img height=300 src="/assets/img/papers/dan_structure.png"><br>
+<img height=250 src="/assets/img/papers/dan_decoder.png">
+</center>
+
+- References
+  - [ArXiv](https://arxiv.org/abs/1912.10205)
+  - [Github (PyTorch)](https://github.com/Wang-Tianwei/Decoupled-attention-network)
+
+---
+
+### [SATRN (CVPR 2020)](https://drive.google.com/file/d/10OghyMUHCBIS-ZmCNAuZvr2PRZXY7dtl/view?usp=drivesdk)
+On Recognizing Texts of Arbitrary Shapes with 2D Self-Attention
+
+- References
+  - [CVF](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w34/Lee_On_Recognizing_Texts_of_Arbitrary_Shapes_With_2D_Self-Attention_CVPRW_2020_paper.pdf)
+  - [PaperswithCode](https://paperswithcode.com/paper/on-recognizing-texts-of-arbitrary-shapes-with)
+  - [Github (PyTorch)](https://github.com/Media-Smart/vedastr)
+  - [Github (Tensorflow)](https://github.com/clovaai/SATRN)
 
 ---
 
@@ -316,7 +507,7 @@ An Attentional Scene Text Recognizer with Flexible Rectification
 
 ---
 
-### [PGNet (AAAI 2021)]()
+### [PGNet (AAAI 2021)](https://drive.google.com/file/d/17AlkAggR6qqk0DTR5mQrMGknwTRsaqWR/view?usp=drivesdk)
 Real-time Arbitrarily-Shaped Text Spotting with Point Gathering Network
 
 - Overview
@@ -329,14 +520,14 @@ Real-time Arbitrarily-Shaped Text Spotting with Point Gathering Network
     - 图细化模块（graph refinement module = GRM）来优化粗识别并提高端到端性能
     - 可达 46.7 FPS
   - 两种变体
-    - PGNet-A = PGNet-Accuracy --> ResNet-50
-    - PGNet-E = PGNet-Efficient --> EfficientNet-B0
+    - PGNet-A = PGNet-Accuracy $\rightarrow$ ResNet-50
+    - PGNet-E = PGNet-Efficient $\rightarrow$ EfficientNet-B0
   - 硬件要求
     - Intel(R) Xeon(R) CPU E5-2620; GPU: NVIDIA TITAN Xp x4; RAM: 64GB
     - 目前只支持PaddlePaddle
 
 - **Framework**
-  - 直接从FPN (Feature Pyramid Network) 生成的<img src="https://latex.codecogs.com/svg.image?F_{visual}" /> 学习文本区域的各种信息：
+  - 直接从FPN (Feature Pyramid Network) 生成的$F_\text{visual}$ 学习文本区域的各种信息：
     - 四种feature map大小均为原输入图片的1/4，分别由各自的目标标注 (supervised by the same scale label maps) 做训练
       - 文本字符分类图（pixel-level TCC）：对像素做分类，提供字符级别的信息
       - 文本中心线 (TCL)：获取字符中心点序列
@@ -375,7 +566,7 @@ Real-time Arbitrarily-Shaped Text Spotting with Point Gathering Network
 <center><img height=250 src="/assets/img/papers/accuracy_fps_overview.jpg"/></center>
 <center><img src="/assets/img/papers/text_detection_recognition_e2e_pgnet.png"/></center>
 
-- 其他算法的缺点
+- Drawbacks of other methods
   - TextDragon 和 Mask TextSpotter 强假设文本区域的阅读方向要么是从左到右、要么是从上到下
   - 在实践中免费合成数据并不能完全替代真实数据
   - 在Mask TextSpotter和CharNet中，训练需要字符级的标注，成本太高
@@ -385,3 +576,7 @@ Real-time Arbitrarily-Shaped Text Spotting with Point Gathering Network
   - [AAAI](https://ojs.aaai.org/index.php/AAAI/article/view/16383)
   - [PGNet (知乎)](https://zhuanlan.zhihu.com/p/385115756)
   - [PaperswithCode](https://paperswithcode.com/paper/pgnet-real-time-arbitrarily-shaped-text)
+
+---
+
+

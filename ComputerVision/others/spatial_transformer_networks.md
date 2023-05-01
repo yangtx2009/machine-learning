@@ -1,14 +1,24 @@
+---
+title: Spatial Transformer Networks
+author: yangtx
+math: true
+---
+
 # [Spatial Transformer Networks (NIPS 2015)](https://drive.google.com/file/d/1fKuoKQo3drQ7elaf8Y3LP7nKCDv9FTUj/view?usp=drivesdk)
 
-<img height=280 src="images/spatial_transformer_networks_example.png">
-
+<center>
+<img height=280 src="/assets/img/papers/spatial_transformer_networks_example.png">
+</center>
 ## Overview
 - 可以处理 random translation, scale, rotation, clutter （杂乱）
 - STN对于多通道图像的每个通道都应用相同的扭曲（wraping）操作
 
 ## Method
 - Localisation Network
-  - 生成 空间转换参数，也就是转换矩阵里的 <img src="https://latex.codecogs.com/svg.image?\theta" /> <img src="https://latex.codecogs.com/svg.image?\binom{x_i^s}{y_i^s}&space;=&space;\mathcal{T}_\theta&space;(G_i)&space;=&space;A_\theta&space;\begin{pmatrix}x_i^t&space;\\y_i^t&space;\\1\end{pmatrix}&space;=&space;\begin{bmatrix}\theta_{11}&space;&&space;\theta_{12}&space;&&space;\theta_{13}&space;\\\theta_{21}&space;&&space;\theta_{22}&space;&&space;\theta_{23}&space;\\\end{bmatrix}&space;\begin{pmatrix}x_i^t&space;\\y_i^t&space;\\1\end{pmatrix}" />
+  - 生成 空间转换参数，也就是转换矩阵里的 $\theta$ 
+  $$
+  \binom{x_i^s}{y_i^s}=\mathcal{T}_\theta(G_i)=A_\theta\begin{pmatrix}x_i^t\\y_i^t\\1\end{pmatrix}=\begin{bmatrix}\theta_{11}&\theta_{12}&\theta_{13}\\\theta_{21}&\theta_{22}&\theta_{23}\\\end{bmatrix}\begin{pmatrix}x_i^t\\y_i^t\\1\end{pmatrix}
+  $$
 - Grid Generator
   - 根据空间转换参数，生成一个sampling grid（采样网格）
 - Sampler
